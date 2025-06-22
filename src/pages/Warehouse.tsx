@@ -2,7 +2,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Truck, Package, ZoomIn, ZoomOut, RotateCw } from "lucide-react";
+import { Truck, Package, ZoomIn, ZoomOut, RotateCw, BarChart3 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Warehouse = () => {
