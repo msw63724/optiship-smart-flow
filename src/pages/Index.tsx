@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Truck, Package, MapPin, BarChart3, Clock, TrendingUp } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const stats = [
@@ -18,16 +19,17 @@ const Index = () => {
       <header className="border-b bg-white/80 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-pink-500 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
               <Truck className="w-5 h-5 text-white" />
             </div>
             <span className="text-xl font-bold text-gray-900">OptiShip</span>
           </div>
           <nav className="hidden md:flex items-center space-x-6">
-            <a href="#" className="text-gray-600 hover:text-pink-500 transition-colors">Dashboard</a>
-            <a href="#" className="text-gray-600 hover:text-pink-500 transition-colors">Analytics</a>
-            <a href="#" className="text-gray-600 hover:text-pink-500 transition-colors">Routes</a>
-            <a href="#" className="text-gray-600 hover:text-pink-500 transition-colors">Fleet</a>
+            <Link to="/dashboard" className="text-gray-600 hover:text-blue-500 transition-colors">Dashboard</Link>
+            <Link to="/warehouse" className="text-gray-600 hover:text-blue-500 transition-colors">Warehouse</Link>
+            <Link to="/routes" className="text-gray-600 hover:text-blue-500 transition-colors">Routes</Link>
+            <Link to="/products" className="text-gray-600 hover:text-blue-500 transition-colors">Products</Link>
+            <Link to="/analytics" className="text-gray-600 hover:text-blue-500 transition-colors">Analytics</Link>
           </nav>
         </div>
       </header>
@@ -35,12 +37,12 @@ const Index = () => {
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-16">
         <div className="text-center max-w-4xl mx-auto">
-          <Badge className="mb-4 bg-pink-100 text-pink-700 hover:bg-pink-100">
+          <Badge className="mb-4 bg-blue-100 text-blue-700 hover:bg-blue-100">
             Smart Logistics Platform
           </Badge>
           
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-            Welcome to <span className="text-pink-500">OptiShip</span>
+            Welcome to <span className="text-blue-500">OptiShip</span>
           </h1>
           
           <p className="text-xl text-gray-600 mb-8 leading-relaxed">
@@ -62,8 +64,8 @@ const Index = () => {
               { icon: Truck, text: "Maximize fleet efficiency & reduce delays" },
             ].map((feature, index) => (
               <div key={index} className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-pink-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <feature.icon className="w-4 h-4 text-pink-600" />
+                <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <feature.icon className="w-4 h-4 text-blue-600" />
                 </div>
                 <span className="text-gray-700">{feature.text}</span>
               </div>
@@ -73,17 +75,19 @@ const Index = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-16">
             <Button 
+              asChild
               size="lg" 
-              className="bg-pink-500 hover:bg-pink-600 text-white font-semibold rounded-full px-8 py-3 text-lg shadow-lg hover:shadow-xl transition-all"
+              className="bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-full px-8 py-3 text-lg shadow-lg hover:shadow-xl transition-all"
             >
-              Start Optimizing
+              <Link to="/dashboard">Start Optimizing</Link>
             </Button>
             <Button 
+              asChild
               variant="outline" 
               size="lg"
-              className="border-2 border-pink-500 text-pink-500 hover:bg-pink-50 rounded-full px-8 py-3 text-lg font-semibold transition-all"
+              className="border-2 border-blue-500 text-blue-500 hover:bg-blue-50 rounded-full px-8 py-3 text-lg font-semibold transition-all"
             >
-              View Dashboard
+              <Link to="/dashboard">View Dashboard</Link>
             </Button>
           </div>
 
@@ -105,8 +109,8 @@ const Index = () => {
             <Card key={index} className="hover:shadow-lg transition-shadow bg-white border-0 shadow-md">
               <CardContent className="p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center">
-                    <stat.icon className="w-6 h-6 text-pink-600" />
+                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                    <stat.icon className="w-6 h-6 text-blue-600" />
                   </div>
                   {stat.status && (
                     <Badge className="bg-green-100 text-green-700 hover:bg-green-100">
@@ -135,7 +139,7 @@ const Index = () => {
         <div className="container mx-auto px-4 py-8">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
-              <div className="w-6 h-6 bg-pink-500 rounded flex items-center justify-center">
+              <div className="w-6 h-6 bg-blue-500 rounded flex items-center justify-center">
                 <Truck className="w-4 h-4 text-white" />
               </div>
               <span className="font-semibold text-gray-900">OptiShip</span>
