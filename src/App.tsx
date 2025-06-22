@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Dashboard from "./pages/Dashboard";
 import Warehouse from "./pages/Warehouse";
-import Routes as RoutesPage from "./pages/Routes";
+import RoutesPage from "./pages/Routes";
 import Products from "./pages/Products";
 import NotFound from "./pages/NotFound";
 
